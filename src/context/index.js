@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import questionService from '../services/Questions';
+import questionService from '../services/questions';
 
 export const Context = createContext();
 
