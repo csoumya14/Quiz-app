@@ -4,7 +4,7 @@
 
 This project was created as a solo project for the Chingu Voyage 30. It pulls data from the api(https://johnmeade-webdev.github.io/chingu_quiz_api/trial.json)
 
-#### LIVE LINK :
+#### LIVE LINK : (https://quiz-app-csoumya14.vercel.app/)
 
 ## Features
 
@@ -34,8 +34,8 @@ In the project directory, you can run:
 
 ### `npm start`
 
-- Runs the app in the development mode.\
+ Runs the app in the development mode.\
   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- The page will reload if you make edits.\
-- You will also see any lint errors in the console.
+The page will reload if you make edits.\
+ You will also see any lint errors in the console.
