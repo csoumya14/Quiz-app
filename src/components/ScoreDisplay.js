@@ -8,12 +8,13 @@ const ScoreMessage = styled.p`
   color: #800000;
   margin-top: 8rem;
 `;
+const FinishMessage = styled(ScoreMessage)``;
 
 const ScoreDisplay = () => {
   const { displayQuestions, score } = useContext(Context);
   return (
     <div>
-      <p>Finished!</p>
+      <FinishMessage>Finished!</FinishMessage>
       <ScoreMessage>
         You scored {score} out of {displayQuestions.length}
       </ScoreMessage>

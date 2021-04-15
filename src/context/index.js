@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import questionService from '../services/questions';
+import questionService from '../services/Questions';
 
 export const Context = createContext();
 
@@ -23,9 +23,14 @@ const Provider = ({ children }) => {
   const [showScore, setShowScore] = useState(false);
 
   useEffect(() => {
-    questionService.getAll().then(fetchedQuestions => {
-      setQuestions(fetchedQuestions);
-    });
+    questionService
+      .getAll()
+      .then(fetchedQuestions => {
+        setQuestions(fetchedQuestions);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }, []);
 
   const displayQuestions = questions.slice(0, 3);
