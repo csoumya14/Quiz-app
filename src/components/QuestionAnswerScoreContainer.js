@@ -4,9 +4,9 @@ import ScoreDisplay from './ScoreDisplay';
 import QuestionAnswerContainer from './QuestionAnswerContainer';
 
 const QuestionContainer = () => {
-  const { showScore } = useContext(Context);
+  const { finished } = useContext(Context);
 
-  return <div>{showScore ? <ScoreDisplay /> : <QuestionAnswerContainer />}</div>;
+  return <div>{finished ? <ScoreDisplay /> : <QuestionAnswerContainer />}</div>;
 };
 
 export default QuestionContainer;

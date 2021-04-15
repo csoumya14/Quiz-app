@@ -4,6 +4,7 @@ import { Context } from '../context';
 import Options from './Options';
 import NextButton from './NextButton';
 import QuestionDetails from './QuestionDetails';
+import Notification from './Notification';
 
 const CardContainer = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const CardContainer = styled.div`
 `;
 
 const QuestionAnswerContainer = () => {
-  const { displayQuestions, notification, setNotification, setShowScore } = useContext(Context);
+  const { displayQuestions, setNotification, setFinished } = useContext(Context);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
 
@@ -37,7 +38,7 @@ const QuestionAnswerContainer = () => {
     if (nextQuestion < displayQuestions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      setShowScore(true);
+      setFinished(true);
     }
   };
 
@@ -45,7 +46,7 @@ const QuestionAnswerContainer = () => {
     <CardContainer>
       <QuestionDetails currentQuestion={currentQuestion} />
       <Options currentQuestion={currentQuestion} setIsCorrect={setIsCorrect} />
-      <p>{notification}</p>
+      <Notification />
       {isCorrect ? <NextButton handleNextQuestion={handleNextQuestion} /> : ''}
     </CardContainer>
   );

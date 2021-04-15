@@ -3,7 +3,7 @@ import questionService from '../services/Questions';
 
 export const Context = createContext();
 
-const intialQuestion = {
+const initialQuestion = {
   question: 'Which HTML5 element should contain important links for navigating a website?',
   id: 1,
   topic: 'html',
@@ -17,10 +17,10 @@ const intialQuestion = {
 };
 
 const Provider = ({ children }) => {
-  const [questions, setQuestions] = useState([intialQuestion]);
-  const [score, setScore] = useState(0);
+  const [questions, setQuestions] = useState([initialQuestion]);
+  const [displayQuestions, setDisplayQuestions] = useState([initialQuestion]);
+  const [finished, setFinished] = useState(false);
   const [notification, setNotification] = useState('');
-  const [showScore, setShowScore] = useState(false);
 
   useEffect(() => {
     questionService
@@ -33,16 +33,31 @@ const Provider = ({ children }) => {
       });
   }, []);
 
-  const displayQuestions = questions.slice(0, 3);
+  useEffect(() => {
+    createRandom(questions);
+  }, [questions]);
+  const createRandom = array => {
+    let originalArray = [...array];
+    let randomizedArray = [];
+
+    while (randomizedArray.length <= 9) {
+      let randomIndex = Math.floor(Math.random() * originalArray.length);
+      const randomQuestion = originalArray[randomIndex];
+
+      randomizedArray.push(randomQuestion);
+
+      originalArray.splice(randomIndex, 1);
+    }
+
+    setDisplayQuestions(randomizedArray);
+  };
 
   const ContextValue = {
     displayQuestions,
     notification,
     setNotification,
-    score,
-    setScore,
-    showScore,
-    setShowScore,
+    finished,
+    setFinished,
   };
   return <Context.Provider value={ContextValue}>{children}</Context.Provider>;
 };

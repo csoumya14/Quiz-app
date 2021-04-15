@@ -21,7 +21,7 @@ const QuestionDetails = ({ currentQuestion }) => {
     <QuestionContainer>
       <p className="question-number">
         {' '}
-        Question <span>{displayQuestions[currentQuestion].id}</span>/10
+        Question <span>{currentQuestion + 1}</span>/10
       </p>
       <h3 className="question">{displayQuestions[currentQuestion].question}</h3>
     </QuestionContainer>

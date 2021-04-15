@@ -10,7 +10,7 @@ This project was created as a solo project for the Chingu Voyage 30. It pulls da
 
 - 10 questions are randomly selected from a list of 36 questions.
 
-- Only one question and the availabe options is displayed at a time.
+- Only one question and the available options is displayed at a time.
 
 - User can advance to next question only after selecting the correct answer.
 
@@ -18,7 +18,7 @@ This project was created as a solo project for the Chingu Voyage 30. It pulls da
 
 - Messages are displayed both for the correct answer and wrong answer.
 
-- After completing the quiz a final score is displayed.
+- After completing the quiz a finish message is displayed.
 
 ## Tech Used / Dependencies
 

@@ -14,17 +14,15 @@ const OptionSection = styled.div`
 `;
 
 const Options = ({ currentQuestion, setIsCorrect }) => {
-  const { displayQuestions, setNotification, score, setScore } = useContext(Context);
+  const { displayQuestions, setNotification } = useContext(Context);
 
-  function getKeyByValue(object, value) {
+  const getKeyByValue = (object, value) => {
     return Object.keys(object).find(key => object[key] === value);
-  }
+  };
 
   const handleOptionClick = choice => {
     const chosenValue = getKeyByValue(displayQuestions[currentQuestion].choices, choice);
-
     if (displayQuestions[currentQuestion].answer === chosenValue) {
-      setScore(score + 1);
       setIsCorrect(true);
       setNotification('Well Done! Correct!');
     } else {

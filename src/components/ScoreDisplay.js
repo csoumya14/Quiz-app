@@ -1,5 +1,3 @@
-import { Context } from '../context';
-import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 const ScoreMessage = styled.p`
@@ -11,13 +9,9 @@ const ScoreMessage = styled.p`
 const FinishMessage = styled(ScoreMessage)``;
 
 const ScoreDisplay = () => {
-  const { displayQuestions, score } = useContext(Context);
   return (
     <div>
       <FinishMessage>Finished!</FinishMessage>
-      <ScoreMessage>
-        You scored {score} out of {displayQuestions.length}
-      </ScoreMessage>
     </div>
   );
 };

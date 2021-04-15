@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ButtonOptions = styled.button`
   width: 10rem;
-  height: 3rem;
+  height: 5rem;
   margin-bottom: 1rem;
   background-color: transparent;
   border: 1px solid #d9d8d4;
